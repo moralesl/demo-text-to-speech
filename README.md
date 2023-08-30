@@ -38,6 +38,16 @@ The first command will build the source of your application. The second command 
 
 The API Gateway endpoint API will be displayed in the outputs when the deployment is complete.
 
+### Invoke the deployed function
+
+The AWS SAM CLI can also invoke your remote application's API. Use the `sam remote invoke` command to run the remote API.
+
+```bash
+my-application$ sam remote invoke SynthesizeSpeechHandler --event-file events/event-synthesize-hello-world.json
+my-application$ sam remote invoke SynthesizeSpeechHandler --event-file events/event-synthesize-hello-world-long.json
+```
+
+
 ## Use the AWS SAM CLI to build and test locally
 
 Build your application by using the `sam build` command.
@@ -55,13 +65,6 @@ Run functions locally and invoke them with the `sam local invoke` command.
 ```bash
 my-application$ sam local invoke SynthesizeSpeechHandler --event events/event-synthesize-hello-world.json
 my-application$ sam local invoke SynthesizeSpeechHandler --event events/event-synthesize-hello-world-long.json
-```
-
-The AWS SAM CLI can also invoke your remote application's API. Use the `sam remote invoke` command to run the remote API.
-
-```bash
-my-application$ sam remote invoke SynthesizeSpeechHandler --event-file events/event-synthesize-hello-world.json
-my-application$ sam remote invoke SynthesizeSpeechHandler --event-file events/event-synthesize-hello-world-long.json
 ```
 
 The AWS SAM CLI reads the application template to determine the API's routes and the functions that they invoke. The `Events` property on each function's definition includes the route and method for each path.
