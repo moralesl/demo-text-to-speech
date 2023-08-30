@@ -1,4 +1,7 @@
 # demo-text-to-speech
+This project is a demo to showcase how to connect AWS Lambda with Amazon Polly is Javascript.
+
+![Architecture Overview](docs/Demo%20Lambda%20Polly%20integration.png)
 
 This project contains source code and supporting files for a serverless application that you can deploy with the AWS Serverless Application Model (AWS SAM) command line interface (CLI). It includes the following files and folders:
 
