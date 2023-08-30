@@ -1,0 +1,9 @@
+{
+    "name": "demo-text-to-speech",
+    "description": "demo-text-to-speech",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "@aws-sdk/client-polly": "^3.398.0"
+    }
+}

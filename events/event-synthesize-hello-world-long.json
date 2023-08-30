@@ -1,0 +1,4 @@
+{
+    "httpMethod": "POST",
+    "body": "{\"message\": \"Hello world, this is the extended version of the demo to show case how Polly reacts on larger inputs. But it's also meant to show case the latency for larger texts.\"}"
+}

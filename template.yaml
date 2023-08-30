@@ -1,0 +1,34 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+Description: >-
+  demo-text-to-speech
+
+Resources:
+  SynthesizeSpeechHandler:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/handlers/synthesize-speech.handler
+      Runtime: nodejs18.x
+      Architectures:
+        - arm64
+      MemorySize: 128
+      Timeout: 100
+      Description: A simple example includes a HTTP post method to synthesize speech
+      Policies:
+        - Version: '2012-10-17' 
+          Statement:
+            - Effect: Allow
+              Action:
+                - polly:SynthesizeSpeech
+              Resource: "*"
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /
+            Method: POST
+
+Outputs:
+  SynthesizeSpeechEndpoint:
+    Description: "API Gateway endpoint URL for Prod stage"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
